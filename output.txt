@@ -1,0 +1,568 @@
+Sun 31 Oct 2021 11:36:21 AM PDT
+Linux csslab6h 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 GNU/Linux
+uid=1175921(younesl) gid=2121175921(younesl) groups=2121175921(younesl),605559(lab-access)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+Path: EEENNNEEEEEESEESSSEEENNNNN
+xxxxxxxxxxxxxxxxxx*x
+x     x*******xxxx*x
+x xxxxx*xxxxx***xx*x
+x xxxxx*xxxxxxx*xx*x
+x x ****+++++xx*xx*x
+x xxxxxxxxxx+xx****x
+xxxxxxxxxxxxxxxxxxxx
+
+
+Path: SSSSWWWNNNWWNWWWWWWWWWWN
+xxx*xxxxxxxxxxxxxxxx
+x++***********xxxx*x
+x+xxxxx xxxxx***xx*x
+x+xxxxx xxxxxxx*xx*x
+x+x          xx*xx*x
+x+xxxxxxxxxx xx****x
+xxxxxxxxxxxxxxxxxxxx
+
+
+Path: EEEEEEEEENNNEEEEEEEESSSEEEEEEENNEEENEESSSEEEEEEEENNWWWWWWNNN
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+x     x       xxxx          x+xxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+x xxxxx xxxxx   xx xxxxxxxx x*********xxxxxxxxx***x* xxxxxxx
+x xxxxx xxxxxxx xx x         *xxxxxxx*xx    ****x*x*******xx
+x x          xx xx xxxxxxxxxx*x      *xxxxxx*xxxx*xxxxxxx*xx
+x xxxxxxxxxx xx    x**********x      ********xxxx*********xx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Path: EEEEEEEEEEEESEESSSEEENNNNEEEEEEEEESSEENEEEEEEEESSSEEEEEEENNEEENEESSSEESSSSSEEEEEESSWWWWWWWWNNNWWSWWWSSWWWWWWWNNNWWWWWWWWSWWNNNWWWWWWWWWSSSSSWWWNNNWWNWWWWWWSSSWWWWWWSS
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x*************xxxx**********x+xxxxxxxxxxxxxxxxxxxxx+xxxxxxxx
+x xxxxx xxxxx***xx*xxxxxxxx*x*********xxxxxxxxx***x++xxxxxxx
+x xxxxx xxxxxxx*xx*x       ***xxxxxxx*xx    ****x*x+++++++xx
+x x          xx*xx*xxxxxxxxxx x      *xxxxxx*xxxx*xxxxxxx+xx
+x xxxxxxxxxx xx****x          x xxxxx********xxxx***++++++xx
+x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+xxxxxxxxxxxxxxxxxx**********xxxxxxxxx              *xxxxxxxx
+x++++++*******xxxx*        *x+xxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+x+xxxxx*xxxxx***xx*xxxxxxxx*x*********xxxxxxxxx***x* xxxxxxx
+xxxxxxx*xxxxxxx*xx*x+++++++***xxxxxxx*xx++++****x*x*******xx
+x*******+++++xx*xx*xxxxxxxxxx+x      *xxxxxx*xxxx*xxxxxxx*xx
+x*xxxxxxxxxx+xx****x++++++++++x xxxxx********xxxx*********xx
+x*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Path: EEEEEEEEEEEESEESSSEEENNNNEEEEEEEEESSEENEEEEEEEESSSEEEEEEENNEEENEESSSEESSSSSEEEEEESSWWWWWWWWNNNWWSWWWSSWWWWWWWNNNWWWWWWWWSWWNNNWWWWWWWWWSSSSSWWWNNNWWNWWWWWWSSSWWWWWWSSSSEEEEEESSSWWWWWWSS
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x*************xxxx**********x+xxxxxxxxxxxxxxxxxxxxx+xxxxxxxx
+x xxxxx xxxxx***xx*xxxxxxxx*x*********xxxxxxxxx***x++xxxxxxx
+x xxxxx xxxxxxx*xx*x       ***xxxxxxx*xx    ****x*x+++++++xx
+x x          xx*xx*xxxxxxxxxx x      *xxxxxx*xxxx*xxxxxxx+xx
+x xxxxxxxxxx xx****x          x xxxxx********xxxx***++++++xx
+x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+xxxxxxxxxxxxxxxxxx**********xxxxxxxxx              *xxxxxxxx
+x++++++*******xxxx*        *x+xxxxxxxxxxxxxxxxxxxxx*xxxxxxxx
+x+xxxxx*xxxxx***xx*xxxxxxxx*x*********xxxxxxxxx***x* xxxxxxx
+xxxxxxx*xxxxxxx*xx*x+++++++***xxxxxxx*xx++++****x*x*******xx
+x*******+++++xx*xx*xxxxxxxxxx+x      *xxxxxx*xxxx*xxxxxxx*xx
+x*xxxxxxxxxx+xx****x++++++++++x xxxxx********xxxx*********xx
+x*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx+++++++++++++++xxxxxxxx
+x*******++++++xxxx++++++++++x+xxxxxxxxxxxxxxxxxxxxx+xxxxxxxx
+x+xxxxx*xxxxx+++xx+xxxxxxxx+x+++++++++xxxxxxxxx+++x++xxxxxxx
+xxxxxxx*xxxxxxx+xx+xxxxxxxx+++xxxxxxx+xx++++++++x+x+++++++xx
+x*******+++++xx+xx+xxxxxxxxxx+x+++++++xxxxxx+xxxx+xxxxxxx+xx
+x*xxxxxxxxxx+xx++++x++++++++++x+xxxxx++++++++xxxx+++++++++xx
+x*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Path: There is no path to move.
+xxxxxx x
+x*+++x x
+x++++xxx
+x++++++x
+x++++++x
+x++++++x
+x++++++x
+xxxxxxxx
+
+
+Done!
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./creature.cpp
+6,7c6,7
+< //This is the operator overload of the operator "<<"
+< //this prints out the current location of the creature
+---
+> // This is the operator overload of the operator "<<"
+> // this prints out the current location of the creature
+9c9,10
+<   Out << "The Creatures' current location is: " << "(" << Creature.Row << "," << Creature.Col << ")" << endl;
+---
+>   Out << "The Creatures' current location is: "
+>       << "(" << Creature.Row << "," << Creature.Col << ")" << endl;
+12c13
+< //This is the constructor
+---
+> // This is the constructor
+14c15,16
+< //This method returns whether the creature is currently at the exit point of the maze.
+---
+> // This method returns whether the creature is currently at the exit point of
+> // the maze.
+16,17c18,20
+<   //this if checks if the current row and column is matching with the exit row and column
+<   if (Row == Maze.getExitRow() && Col == Maze.getExitColumn()){
+---
+>   // this if checks if the current row and column is matching with the exit row
+>   // and column
+>   if (Row == Maze.getExitRow() && Col == Maze.getExitColumn()) {
+22,24c25,28
+< //this is the method that you call to solve the maze
+< //this method utilized the move methods to effectively solve the maze
+< //this method is needed to boot up the recursive methods to start working with each other.
+---
+> // this is the method that you call to solve the maze
+> // this method utilized the move methods to effectively solve the maze
+> // this method is needed to boot up the recursive methods to start working with
+> // each other.
+28c32
+< //this marks the starting spot as part of the path.
+---
+>   // this marks the starting spot as part of the path.
+30c34
+< //this makes the creature attempt to go North
+---
+>   // this makes the creature attempt to go North
+32,34c36,38
+< //this checks if the northern block is a wall
+<   if (path == "X"){
+< //this makes the creature attempt to go East
+---
+>   // this checks if the northern block is a wall
+>   if (path == "X") {
+>     // this makes the creature attempt to go East
+36,38c40,42
+< //this checks if the eastern block is a wall
+<     if (path == "X"){
+< //this makes the creature attempt to go West
+---
+>     // this checks if the eastern block is a wall
+>     if (path == "X") {
+>       // this makes the creature attempt to go West
+40,42c44,46
+< //this checks if the western block is a wall
+<       if(path == "X"){
+< //this makes the creature attempt to go South
+---
+>       // this checks if the western block is a wall
+>       if (path == "X") {
+>         // this makes the creature attempt to go South
+44,46c48,52
+< //this checks if the southern block is a wall
+<         if (path == "X"){
+< //if the code gets here then it means that the creature is surrounded by walls or has explored every option and there is no possible path to the exit
+---
+>         // this checks if the southern block is a wall
+>         if (path == "X") {
+>           // if the code gets here then it means that the creature is surrounded
+>           // by walls or has explored every option and there is no possible path
+>           // to the exit
+55c61
+< //this is the function that attempts to move the creature north
+---
+> // this is the function that attempts to move the creature north
+57c63
+< //intializing the path to be blocked at the start
+---
+>   // intializing the path to be blocked at the start
+59,61c65,68
+< //this checks if the block north of the creature is clear
+<   if (Maze.isClear(Row - 1 , Col)){
+< //if it is clear it moves the creature north and marks it as part of the path
+---
+>   // this checks if the block north of the creature is clear
+>   if (Maze.isClear(Row - 1, Col)) {
+>     // if it is clear it moves the creature north and marks it as part of the
+>     // path
+64,65c71,72
+< //this checks if the creature is at the exit and returns the path
+<     if (atExit(Maze) == true){
+---
+>     // this checks if the creature is at the exit and returns the path
+>     if (atExit(Maze) == true) {
+68c75
+< //attempts to move the creature north again 
+---
+>     // attempts to move the creature north again
+70,72c77,79
+< //checks if the northern block is a wall
+<     if(newPath == "X"){
+< //attempts to go east (gets here if northern block is a wall)
+---
+>     // checks if the northern block is a wall
+>     if (newPath == "X") {
+>       // attempts to go east (gets here if northern block is a wall)
+74,76c81,83
+< //checks if the eastern block is a wall
+<       if (newPath == "X"){
+< //attempts to go west (gets here if the eastern block is a wall)
+---
+>       // checks if the eastern block is a wall
+>       if (newPath == "X") {
+>         // attempts to go west (gets here if the eastern block is a wall)
+78,80c85,88
+< //checks if the western block is a wall
+<         if (newPath == "X"){
+< //if the western wall is a wall then it marks the current spot as visited and backtracks to previous block
+---
+>         // checks if the western block is a wall
+>         if (newPath == "X") {
+>           // if the western wall is a wall then it marks the current spot as
+>           // visited and backtracks to previous block
+87,88c95
+<   }
+<   else {
+---
+>   } else {
+91c98
+< //recursively returns the path
+---
+>   // recursively returns the path
+94c101
+< //this is the function that attempts to move the creature west
+---
+> // this is the function that attempts to move the creature west
+96c103
+< //intializing the path to be blocked at the start
+---
+>   // intializing the path to be blocked at the start
+98,100c105,108
+< //this checks if the block west of the creature is clear
+<   if (Maze.isClear(Row, Col - 1) == true){
+< //if it is clear it moves the creature west and marks it as part of the path
+---
+>   // this checks if the block west of the creature is clear
+>   if (Maze.isClear(Row, Col - 1) == true) {
+>     // if it is clear it moves the creature west and marks it as part of the
+>     // path
+103,104c111,112
+< //this checks if the creature is at the exit and returns the path
+<     if (atExit(Maze) == true){
+---
+>     // this checks if the creature is at the exit and returns the path
+>     if (atExit(Maze) == true) {
+107c115
+< //attempts to move the creature west again 
+---
+>     // attempts to move the creature west again
+109,111c117,119
+< //checks if the western block is a wall
+<     if(newPath == "X"){
+< //attempts to go north (gets here if western block is a wall)
+---
+>     // checks if the western block is a wall
+>     if (newPath == "X") {
+>       // attempts to go north (gets here if western block is a wall)
+113,115c121,123
+< //checks if the northern block is a wall
+<       if (newPath == "X"){
+< //attempts to go south (gets here if northern block is a wall)
+---
+>       // checks if the northern block is a wall
+>       if (newPath == "X") {
+>         // attempts to go south (gets here if northern block is a wall)
+117,119c125,128
+< //checks if the southern block is a wall
+<         if (newPath == "X"){
+< //if the southern wall is a wall then it marks the current spot as visited and backtracks to previous block
+---
+>         // checks if the southern block is a wall
+>         if (newPath == "X") {
+>           // if the southern wall is a wall then it marks the current spot as
+>           // visited and backtracks to previous block
+126,127c135
+<   }
+<   else {
+---
+>   } else {
+130c138
+< //recursively returns the path
+---
+>   // recursively returns the path
+133c141
+< //this is the function that attempts to move the creature east
+---
+> // this is the function that attempts to move the creature east
+135c143
+< //intializing the path to be blocked at the start
+---
+>   // intializing the path to be blocked at the start
+137,139c145,148
+< //this checks if the block east of the creature is clear
+<   if (Maze.isClear(Row, Col + 1) == true){
+< //if it is clear it moves the creature east and marks it as part of the path
+---
+>   // this checks if the block east of the creature is clear
+>   if (Maze.isClear(Row, Col + 1) == true) {
+>     // if it is clear it moves the creature east and marks it as part of the
+>     // path
+142,143c151,152
+< //this checks if the creature is at the exit and returns the path
+<     if (atExit(Maze) == true){
+---
+>     // this checks if the creature is at the exit and returns the path
+>     if (atExit(Maze) == true) {
+146c155
+< //attempts to move the creature east again 
+---
+>     // attempts to move the creature east again
+148,150c157,159
+< //checks if the eastern block is a wall
+<     if(newPath == "X"){
+< //attempts to go north (gets here if eastern block is a wall)
+---
+>     // checks if the eastern block is a wall
+>     if (newPath == "X") {
+>       // attempts to go north (gets here if eastern block is a wall)
+152,154c161,163
+< //checks if the northern block is a wall
+<       if (newPath == "X"){
+< //attempts to go south (gets here if northern block is a wall)
+---
+>       // checks if the northern block is a wall
+>       if (newPath == "X") {
+>         // attempts to go south (gets here if northern block is a wall)
+156,158c165,168
+< //checks if the southern block is a wall
+<         if (newPath == "X"){
+< //if the southern wall is a wall then it marks the current spot as visited and backtracks to previous block
+---
+>         // checks if the southern block is a wall
+>         if (newPath == "X") {
+>           // if the southern wall is a wall then it marks the current spot as
+>           // visited and backtracks to previous block
+165,166c175
+<   }
+<   else {
+---
+>   } else {
+169c178
+< //recursively returns the path
+---
+>   // recursively returns the path
+172c181
+< //this is the function that attempts to move the creature south
+---
+> // this is the function that attempts to move the creature south
+174c183
+< //intializing the path to be blocked at the start
+---
+>   // intializing the path to be blocked at the start
+176,178c185,188
+< //this checks if the block south of the creature is clear
+<   if (Maze.isClear(Row + 1 , Col)){
+< //if it is clear it moves the creature south and marks it as part of the path
+---
+>   // this checks if the block south of the creature is clear
+>   if (Maze.isClear(Row + 1, Col)) {
+>     // if it is clear it moves the creature south and marks it as part of the
+>     // path
+181,182c191,192
+< //this checks if the creature is at the exit and returns the path
+<     if (atExit(Maze) == true){
+---
+>     // this checks if the creature is at the exit and returns the path
+>     if (atExit(Maze) == true) {
+185c195
+< //attempts to move the creature south again 
+---
+>     // attempts to move the creature south again
+187,189c197,199
+< //checks if the southern block is a wall
+<     if(newPath == "X"){
+< //attempts to go east (gets here if southern block is a wall)
+---
+>     // checks if the southern block is a wall
+>     if (newPath == "X") {
+>       // attempts to go east (gets here if southern block is a wall)
+191,193c201,203
+< //checks if the eastern block is a wall
+<       if (newPath == "X"){
+< //attempts to go west (gets here if the eastern block is a wall)
+---
+>       // checks if the eastern block is a wall
+>       if (newPath == "X") {
+>         // attempts to go west (gets here if the eastern block is a wall)
+195,197c205,208
+< //checks if the western block is a wall
+<         if (newPath == "X"){
+< //if the western wall is a wall then it marks the current spot as visited and backtracks to previous block
+---
+>         // checks if the western block is a wall
+>         if (newPath == "X") {
+>           // if the western wall is a wall then it marks the current spot as
+>           // visited and backtracks to previous block
+207c218
+< //recursively returns the path
+---
+>   // recursively returns the path
+Running clang-format on ./main.cpp
+6d5
+< 
+9,37c8,36
+<     Maze M("maze.txt");
+<     Creature C(4, 4);
+<     cout << "Path: " << C.solve(M) << endl;
+<     cout << M << endl;
+< 
+<     Maze M1("maze1.txt");
+<     Creature C1(1, 18);
+<     cout << "Path: " << C1.solve(M1) << endl;
+<     cout << M1 << endl;
+< 
+<     Maze M2("maze2.txt");
+<     Creature C2(5, 20);
+<     cout << "Path: " << C2.solve(M2) << endl;
+<     cout << M2 << endl;
+< 
+<     Maze M3("maze3.txt");
+<     Creature C3(1, 1);
+<     cout << "Path: " << C3.solve(M3) << endl;
+<     cout << M3 << endl;
+< 
+<     Maze M4("maze4.txt");
+<     Creature C4(1, 1);
+<     cout << "Path: " << C4.solve(M4) << endl;
+<     cout << M4 << endl;
+< 
+<     Maze M5("maze5.txt");
+<     Creature C5(1, 1);
+<     cout << "Path: " << C5.solve(M5) << endl;
+<     cout << M5 << endl;
+---
+>   Maze M("maze.txt");
+>   Creature C(4, 4);
+>   cout << "Path: " << C.solve(M) << endl;
+>   cout << M << endl;
+> 
+>   Maze M1("maze1.txt");
+>   Creature C1(1, 18);
+>   cout << "Path: " << C1.solve(M1) << endl;
+>   cout << M1 << endl;
+> 
+>   Maze M2("maze2.txt");
+>   Creature C2(5, 20);
+>   cout << "Path: " << C2.solve(M2) << endl;
+>   cout << M2 << endl;
+> 
+>   Maze M3("maze3.txt");
+>   Creature C3(1, 1);
+>   cout << "Path: " << C3.solve(M3) << endl;
+>   cout << M3 << endl;
+> 
+>   Maze M4("maze4.txt");
+>   Creature C4(1, 1);
+>   cout << "Path: " << C4.solve(M4) << endl;
+>   cout << M4 << endl;
+> 
+>   Maze M5("maze5.txt");
+>   Creature C5(1, 1);
+>   cout << "Path: " << C5.solve(M5) << endl;
+>   cout << M5 << endl;
+40,42c39,41
+<     test();
+<     cout << "Done!" << std::endl;
+<     return 0;
+---
+>   test();
+>   cout << "Done!" << std::endl;
+>   return 0;
+Running clang-format on ./maze.cpp
+3a4
+> #include "maze.h"
+6d6
+< #include "maze.h"
+10c10
+< //this is the operator overload for the operator << 
+---
+> // this is the operator overload for the operator <<
+21c21
+< //this is the constructor
+---
+> // this is the constructor
+44,60d43
+< 
+< }
+< //this method returns the row of the exit
+< int Maze::getExitRow() const {
+<   return ExitRow;
+< }
+< //this method returns the column of the exit
+< int Maze::getExitColumn() const {
+<   return ExitColumn;
+< }
+< //this method returns if the block is clear
+< bool Maze::isClear(int Row, int Col) const {
+<   return Field[Row][Col] == ' ';
+< }
+< //this method marks the block that you are on as part of the path
+< void Maze::markAsPath(int Row, int Col) {
+<   Field[Row][Col] = '*';
+62,65c45,55
+< //this method marks the block that you are on as visited which means it is not part of the path
+< void Maze::markAsVisited(int Row, int Col) {
+<   Field[Row][Col] = '+';
+< }
+\ No newline at end of file
+---
+> // this method returns the row of the exit
+> int Maze::getExitRow() const { return ExitRow; }
+> // this method returns the column of the exit
+> int Maze::getExitColumn() const { return ExitColumn; }
+> // this method returns if the block is clear
+> bool Maze::isClear(int Row, int Col) const { return Field[Row][Col] == ' '; }
+> // this method marks the block that you are on as part of the path
+> void Maze::markAsPath(int Row, int Col) { Field[Row][Col] = '*'; }
+> // this method marks the block that you are on as visited which means it is not
+> // part of the path
+> void Maze::markAsVisited(int Row, int Col) { Field[Row][Col] = '+'; }
+\ No newline at end of file
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==80588== Memcheck, a memory error detector
+==80588== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==80588== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==80588== Command: ./a.out
+==80588== Parent PID: 80506
+==80588== 
+==80588== 
+==80588== HEAP SUMMARY:
+==80588==     in use at exit: 0 bytes in 0 blocks
+==80588==   total heap usage: 401 allocs, 401 frees, 163,132 bytes allocated
+==80588== 
+==80588== All heap blocks were freed -- no leaks are possible
+==80588== 
+==80588== For counts of detected and suppressed errors, rerun with: -v
+==80588== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+./create-output.sh: line 126: ./check-code-coverage.sh: No such file or directory
+Sun 31 Oct 2021 11:36:32 AM PDT
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
